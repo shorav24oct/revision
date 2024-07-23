@@ -1,4 +1,4 @@
-package com.citi.logical.array;
+package com.citi.logical.sorting;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.citi.logical.array;
+package com.citi.logical.sorting;
 
 public class Merge2SortedArrays {
     public static void main(String[] args) {
