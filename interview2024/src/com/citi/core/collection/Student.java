@@ -17,15 +17,12 @@ public class Student implements Comparable<Student> {
     public static void main(String[] args) {
         List<Student> studentList = Arrays.asList(
                 new Student(101,"abc"),
-                new Student(105,"def"),
-                new Student(103,"ghi"),
-                new Student(104,"jkl"),
                 new Student(101,"aba")
         );
 
         System.out.println("before sort => " + studentList);
         //Collections.sort(studentList);
-        Collections.sort(studentList, new NameComparator());
+        Collections.sort(studentList, new IdComparator());
         System.out.println("after sort => " + studentList);
     }
 

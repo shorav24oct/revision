@@ -11,7 +11,7 @@ public class CountFrequency {
 
         Map<String, Long> collect = Arrays.stream(str.split(""))
                 .collect(
-                        Collectors.groupingBy(Function.identity(), Collectors.counting()
+                        Collectors.groupingBy( Function.identity(), Collectors.counting()
                         )
                 );
 

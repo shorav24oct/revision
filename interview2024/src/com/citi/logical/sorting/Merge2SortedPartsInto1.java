@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Merge2SortedPartsInto1 {
     public static void main(String[] args) {
-        int[] a = {5, 10, 15, 2, 4};
+        int[] a = {1, 3, 2, 4};
         int low = 0;
         int high = a.length - 1;
         int mid = (high - low) / 2;
