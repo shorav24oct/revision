@@ -1,5 +1,7 @@
 package com.citi.java8qa;
 
+import com.citi.java8qa.dto.User;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

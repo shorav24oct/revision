@@ -1,4 +1,4 @@
-package com.citi.java8qa;
+package com.citi.java8qa.tricky;
 
 public class EvenOddPrintThread implements Runnable{
 

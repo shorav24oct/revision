@@ -10,10 +10,11 @@ public class CountFrequency {
         String str = "geeks";
 
         Map<String, Long> collect = Arrays.stream(str.split(""))
-                .collect(
-                        Collectors.groupingBy( Function.identity(), Collectors.counting()
-                        )
-                );
+                        .collect(
+                                Collectors.groupingBy(
+                                        Function.identity(), Collectors.counting()
+                                )
+                        );
 
         System.out.println(collect);
     }

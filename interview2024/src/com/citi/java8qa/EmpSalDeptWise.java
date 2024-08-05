@@ -1,5 +1,7 @@
 package com.citi.java8qa;
 
+import com.citi.java8qa.dto.Employee;
+
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
@@ -14,12 +16,14 @@ public class EmpSalDeptWise {
                 new Employee(10, "saurav", "QA", 80000),
                 new Employee(10, "shaily", "devOps", 90000)).collect(Collectors.toList());
 
-        Comparator<Employee> compareBySal = Comparator.comparing(Employee::getSalary);
+        Comparator<Employee> comparatorBySal = Comparator.comparing(Employee::getSalary);
 
         Map<String, Optional<Employee>> map = employeeList.stream()
                 .collect(
                         Collectors.groupingBy(Employee::getDept,
-                                Collectors.reducing(BinaryOperator.maxBy(compareBySal))
+                                Collectors.reducing(
+                                        BinaryOperator.maxBy(comparatorBySal)
+                                )
                         )
                 );
 

@@ -1,4 +1,4 @@
-package com.citi.java8qa;
+package com.citi.java8qa.tricky;
 
 import java.util.Collections;
 import java.util.HashMap;

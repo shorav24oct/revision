@@ -14,6 +14,16 @@ public class Student implements Comparable<Student> {
         this.name = name;
     }
 
+    @Override
+    public int compareTo(Student o) {
+        if (id == o.id)
+            return 0;
+        else if (id > o.id)
+            return 1;
+        else
+            return -1;
+    }
+
     public static void main(String[] args) {
         List<Student> studentList = Arrays.asList(
                 new Student(101,"abc"),
@@ -21,7 +31,7 @@ public class Student implements Comparable<Student> {
         );
 
         System.out.println("before sort => " + studentList);
-        //Collections.sort(studentList);
+        Collections.sort(studentList);
         Collections.sort(studentList, new IdComparator());
         System.out.println("after sort => " + studentList);
     }
@@ -61,15 +71,5 @@ public class Student implements Comparable<Student> {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        if (id == o.id)
-            return 0;
-        else if (id > o.id)
-            return 1;
-        else
-            return -1;
     }
 }

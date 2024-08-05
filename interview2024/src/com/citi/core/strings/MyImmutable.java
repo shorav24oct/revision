@@ -49,9 +49,11 @@ public final class MyImmutable {
 
         Address address = new Address("pune", "411014");
 
-        MyImmutable myImmutable = new MyImmutable("shorav", new Date(), Arrays
-                .stream(new String[]{"1234@gmail.com", "abc@gmail.com"})
-                .collect(Collectors.toList()),address);
+        MyImmutable myImmutable = new MyImmutable(
+                "shorav",
+                new Date(),
+                Arrays.stream(new String[]{"1234@gmail.com", "abc@gmail.com"}).collect(Collectors.toList()),
+                address);
 
         System.out.println(myImmutable);
 

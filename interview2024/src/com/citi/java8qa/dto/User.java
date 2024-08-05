@@ -1,4 +1,4 @@
-package com.citi.java8qa;
+package com.citi.java8qa.dto;
 
 import java.util.List;
 
