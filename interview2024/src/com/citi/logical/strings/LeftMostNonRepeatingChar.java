@@ -2,27 +2,27 @@ package com.citi.logical.strings;
 
 /*
 Input: geeksforgeeks
-Output: g
+Output: f
 
-Input: abcdabcd
-Output: a
+Input: abcdabcde
+Output: e
 
-Input: abcd
+Input: aabb
 Output: -1
  */
 
 import java.util.Arrays;
 
-public class LeftMostRepeatingChar {
+public class LeftMostNonRepeatingChar {
     public static void main(String[] args) {
-        String str = "abcdd";
-        int index1 = firstRepeating(str, str.length());
-        int index = fRepeat(str, str.length());
+        String str = "geeksforgeeks";
+        int i = firstNonRepeating(str, str.length());
+        int index = fNonRepeat(str, str.length());
 
-        if (index1 == -1)
-            System.out.println("Either all characters are distinct or string is empty");
+        if (index == -1)
+            System.out.println("All characters are repeating");
         else
-            System.out.println("First Repeating character is " + str.charAt(index));
+            System.out.println("First Non Repeating character is " + str.charAt(index));
 
     }
 
@@ -30,7 +30,7 @@ public class LeftMostRepeatingChar {
     Time Complexity: O(n2)
     Auxiliary Space: O(1)
      */
-    private static int firstRepeating(String str, int length) {
+    private static int firstNonRepeating(String str, int length) {
 
         int[] COUNT = new int[256];
 
@@ -38,17 +38,13 @@ public class LeftMostRepeatingChar {
             COUNT[str.charAt(i)]++;
 
         for (int i = 0; i < length; i++)
-            if (COUNT[str.charAt(i)] > 1)
+            if (COUNT[str.charAt(i)] == 1)
                 return i;
 
         return -1;
     }
 
-    /*
-    Time Complexity: O(n)
-    Auxiliary Space: O(1)
-     */
-    private static int fRepeat(String s, int n) {
+    private static int fNonRepeat(String s, int n) {
         int[] fIndex = new int[256];
         Arrays.fill(fIndex, -1);
         int res = Integer.MAX_VALUE;
@@ -57,8 +53,13 @@ public class LeftMostRepeatingChar {
             if (fIndex[s.charAt(i)] == -1)
                 fIndex[s.charAt(i)] = i;
             else
-                res = Math.min(res, fIndex[s.charAt(i)]);
+                fIndex[s.charAt(i)] = -2;
         }
+
+        for (int i = 0; i < 256; i++)
+            if (fIndex[i] >= 0)
+                res = Math.min(res, fIndex[i]);
+
 
         return (res == Integer.MAX_VALUE) ? -1 : res;
     }

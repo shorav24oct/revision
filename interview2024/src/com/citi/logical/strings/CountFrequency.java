@@ -2,7 +2,7 @@ package com.citi.logical.strings;
 
 public class CountFrequency {
     public static void main(String[] args) {
-        String str = "geeks";
+        String str = "abcdea";
         countFreq(str);
     }
 
@@ -10,11 +10,11 @@ public class CountFrequency {
         int[] count = new int[256];
 
         for (int i = 0; i < str.length(); i++)
-            count[str.charAt(i) - 'a']++;
+            count[str.charAt(i)]++;
 
         for (int i = 0; i < 256; i++) {
             if (count[i] > 0) {
-                System.out.println( (char)(i + 'a') + " " + count[i] );
+                System.out.println( (char)(i) + " " + count[i] );
             }
         }
     }

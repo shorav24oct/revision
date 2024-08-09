@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class DemoService {
 
-    private DemoController controller;
-
     @Autowired
-    @Lazy
-    public void setController(DemoController controller) {
-        this.controller = controller;
+    private Payment payment;
+
+    public void printMsg() {
+        payment.pay();
     }
+
 }
